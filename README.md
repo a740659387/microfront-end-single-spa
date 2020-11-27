@@ -36,6 +36,9 @@
 
 # 基于portal整合的完整运行步骤
 1. 开启`公共依赖模块的服务`，我的公共依赖模块在portal项目下common-deps-static文件夹中，只需要在这个文件夹下开启服务即可，可以通过http-server插件，端口设置为`8000`，并且设置跨域`--cors`
+操作方法：
+    1.1 安装http-server插件，在命令行中运行：npm i http-server -g
+    1.2 在/protal/common-deps-static/路径下，执行：hs -p 8000 --cors
 2. 在`portal`项目下，执行命令`npm run start`
 3. 在`project2、menu、project1`项目下，分别执行命令`npm run dev`
 4. chrome中打开页面：`http://localhost:8233/`即可
@@ -49,7 +52,3 @@
 这个是因为，在基于portal整合的启动模式下：`npm run dev`，project2(Vue)的打包成umd模式的，project1、menu是打包成amd模式，且只是一个单独的js文件，这样通过各自启动的IP端口打开页面是会报错的，浏览器解析不了这种JS模块，需要portal项目的systemjs来引入，而且`npm run dev`执行后，并没有生成index.html，更不可能打开页面。  
 因此要单独启动小模块，请运行`npm run dev:local`,或参考`package.json`中的启动命令
 
-# 预告
-后续将在子模块中尝试集成各种优秀开源框架，探索single-spa到底有多大的利用价值！  
-能否应用到正式的大型超大型项目中？  
-优化微服务架构，达到开箱即用。
