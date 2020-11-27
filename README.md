@@ -35,10 +35,10 @@
 2. 集成了`vuex、vue-router、axios、element-ui`
 
 # 基于portal整合的完整运行步骤
-1. 开启`公共依赖模块的服务`，我的公共依赖模块在portal项目下common-deps-static文件夹中，只需要在这个文件夹下开启服务即可，可以通过http-server插件，端口设置为`8000`，并且设置跨域`--cors`
-操作方法：
-    1.1 安装http-server插件，在命令行中运行：npm i http-server -g
-    1.2 在/protal/common-deps-static/路径下，执行：hs -p 8000 --cors
+1. 开启`公共依赖模块的服务`，我的公共依赖模块在portal项目下common-deps-static文件夹中，只需要在这个文件夹下开启服务即可，可以通过http-server插件，端口设置为`8000`，并且设置跨域`--cors`  
+操作方法：  
+    1.1 安装http-server插件，在命令行中运行：npm i http-server -g  
+    1.2 在/protal/common-deps-static/路径下，执行：hs -p 8000 --cors  
 2. 在`portal`项目下，执行命令`npm run start`
 3. 在`project2、menu、project1`项目下，分别执行命令`npm run dev`
 4. chrome中打开页面：`http://localhost:8233/`即可
